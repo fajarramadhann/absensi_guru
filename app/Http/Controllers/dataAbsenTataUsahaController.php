@@ -17,12 +17,12 @@ class dataAbsenTataUsahaController extends Controller
                 ->where('absenable_type', 'App\Models\dataTataUsaha')
                 ->whereDate('tanggal_absen', $filterTanggal)
                 ->latest()
-                ->paginate(10);
+                ->get();
         } else {
             $dataAbsenTataUsaha = rekapAbsen::with('absenable')
                 ->where('absenable_type', 'App\Models\dataTataUsaha')
                 ->latest()
-                ->paginate(10);
+                ->get();
         }
         return view('dataAbsenTataUsaha', compact('dataAbsenTataUsaha'));
     }

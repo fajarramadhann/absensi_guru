@@ -17,7 +17,7 @@ class dataTataUsahaController extends Controller
      */
     public function index(): View
     {
-        $dataTataUsaha = dataTataUsaha::latest()->paginate(10);
+        $dataTataUsaha = dataTataUsaha::latest()->get();
         return view('dataTataUsaha.index', compact('dataTataUsaha'));
     }
 

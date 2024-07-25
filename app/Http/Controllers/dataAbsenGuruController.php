@@ -16,12 +16,12 @@ class dataAbsenGuruController extends Controller
                 ->where('absenable_type', 'App\Models\dataGuru')
                 ->whereDate('tanggal_absen', $tanggal)
                 ->latest()
-                ->paginate(15);
+                ->get();
         } else {
             $dataAbsenGuru = rekapAbsen::with('absenable')
                 ->where('absenable_type', 'App\Models\dataGuru')
                 ->latest()
-                ->paginate(15);
+                ->get();
         }
         return view('dataAbsenGuru', compact('dataAbsenGuru'));
     }

@@ -17,12 +17,12 @@ class dataAbsenSatpamController extends Controller
                 ->where('absenable_type', 'App\Models\dataSatpam')
                 ->whereDate('tanggal_absen', $filterTanggal)
                 ->latest()
-                ->paginate(10);
+                ->get();
         } else {
             $dataAbsenSatpam = rekapAbsen::with('absenable')
                 ->where('absenable_type', 'App\Models\dataSatpam')
                 ->latest()
-                ->paginate(10);
+                ->get();
         }
         return view('dataAbsenSatpam', compact('dataAbsenSatpam'));
     }

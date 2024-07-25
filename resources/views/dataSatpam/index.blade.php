@@ -55,7 +55,6 @@
                 @endforelse
               </tfoot>
             </table>
-            {{ $dataSatpam->links() }}
           </div>
           <!-- /.card-body -->
         </div>

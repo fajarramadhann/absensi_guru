@@ -55,7 +55,6 @@
                 @endforelse
               </tfoot>
             </table>
-            {{ $dataTataUsaha->links() }}
           </div>
           <!-- /.card-body -->
         </div>

@@ -59,7 +59,6 @@
                 @endforelse
               </tfoot>
             </table>
-            {{ $dataGuru->links() }}
           </div>
           <!-- /.card-body -->
         </div>
