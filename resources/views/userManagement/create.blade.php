@@ -7,12 +7,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Edit Data Guru</h1>
+            <h1 class="m-0">Tambah User Baru</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Edit Data Guru</a></li>
-              <li class="breadcrumb-item active">Edit Data Guru</li>
+              <li class="breadcrumb-item"><a href="#">User Management</a></li>
+              <li class="breadcrumb-item active">Tambah User Baru</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -25,31 +25,35 @@
       <div class="container-fluid">
         <!-- Info boxes -->
         <div class="card card-primary">
-          <div class="card-header">
-            <h3 class="card-title">Edit Data Guru</h3>
-          </div>
           <!-- /.card-header -->
           <!-- form start -->
-          <form action="{{ route('data-guru.update', $dataGuru->id) }}" method="POST">
+          <form action="{{ route('user-management.store') }}" method="POST">
             @csrf
-            @method('PUT')
 
             <div class="card-body">
               <div class="form-group">
-                <label for="name">Nama Lengkap</label>
-                <input type="text" class="form-control" id="name" placeholder="Masukkan Nama Lengkap" name="nama_lengkap" value="{{ $dataGuru->nama_lengkap }}">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" name="name" required>
               </div>
               <div class="form-group">
-                <label for="mapel">Mata Pelajaran</label>
-                <input type="text" class="form-control" id="mapel" placeholder="Masukkan Mata Pelajaran" name="mata_pelajaran" value="{{ $dataGuru->mata_pelajaran }}">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" name="email" required>
               </div>
               <div class="form-group">
-                <label for="jabatan">Jabatan</label>
-                <input type="text" class="form-control" id="jabatan" placeholder="Masukkan Jabatan" name="jabatan" value="{{ $dataGuru->jabatan }}">
+                <label for="password" class="form-label">Password (minimal 8 karakter)</label>
+                <input type="password" class="form-control" id="password" name="password" required>
               </div>
               <div class="form-group">
-                <label for="kelasAjar">Kelas Ajar</label>
-                <input type="text" class="form-control" id="kelasAjar" placeholder="Masukkan kelas Ajar" name="kelas_ajar" value="{{ $dataGuru->kelas_ajar }}">
+                <label for="password_confirmation" class="form-label">Konfirmasi Password (password harus sama)</label>
+                <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" required>
+              </div>
+              <div class="form-group">
+                <label for="role_id" class="form-label">Role</label>
+            <select class="form-control" id="role_id" name="role_id" required>
+                @foreach($roles as $role)
+                    <option value="{{ $role->id }}">{{ $role->name }}</option>
+                @endforeach
+            </select>
               </div>
             </div>
             <!-- /.card-body -->

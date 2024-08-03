@@ -50,7 +50,7 @@
                     <form action="{{ route('data-guru.destroy', $dataguru->id) }}" method="POST" class="d-inline">
                       @csrf
                       @method('DELETE')
-                      <button type="submit" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
+                      <button type="submit" class="btn btn-danger" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')"><i class="fas fa-trash-alt"></i></button>
                     </td>
                 </tr>
                 @empty
