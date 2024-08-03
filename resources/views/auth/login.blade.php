@@ -5,7 +5,7 @@
   <!-- /.login-logo -->
   <div class="card card-outline card-primary">
     <div class="card-header text-center">
-        <img src="{{ asset('/storage/logosmk9-hd.png') }}" alt="AdminLTE Logo" class="brand-image" style="width: 90px;">
+        <img src="{{ asset('/assets/img/logosmk9-hd.png') }}" alt="AdminLTE Logo" class="brand-image" style="width: 90px;">
       <a href="../../index2.html" class="h1"><b>SI </b>HADIR</a>
       <p>Sistem Absensi SMKN 9 Kota Bekasi</p>
     </div>
